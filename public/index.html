@@ -3,16 +3,19 @@
 <head>
  <meta charset="UTF-8" />
  <title>My Aplicación con Sockets</title>
+ <link rel="stylesheet" href="/public/styles/style.css">
  <script src="/socket.io/socket.io.js"></script>
  <script src="main.js"></script>
 </head>
 <body>
- <h1>My App</h1>
- <form onsubmit="return addMessage(this)">
-    <input type="text" id="username" placeholder="Tu Nombre" />
-    <input type="text" id="texto" placeholder="Cuéntanos algo..." />
-    <input type="submit" value="Enviar!" />
-   </form>
- <div id="messages"></div>
+  <div id="chat-container">
+    <h1>My App</h1>
+    <div id="messages"></div>
+    <form id="message-form" onsubmit="return addMessage(this)">
+      <input type="text" id="username" placeholder="Tu Nombre" />
+      <input type="text" id="texto" placeholder="Cuéntanos algo..." />
+      <input type="submit" value="Enviar!" />
+    </form>
+  </div>
 </body>
 </html>
