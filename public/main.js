@@ -1,10 +1,13 @@
-// Detectar si está en un entorno de producción
-var host = window.location.host;
-var socket = io.connect(`http://${host}`, { forceNew: true });
+var protocol = window.location.protocol; // Detecta si es http o https
+var host = window.location.host; // Obtiene el host actual
+
+// Conecta usando el protocolo apropiado
+var socket = io.connect(`${protocol}//${host}`, { forceNew: true });
 
 socket.on("messages", function (data) {
     console.log(data);
 });
+
 function render(data) {
     var html = data.map(function (elem, index) {
     return `<div>
