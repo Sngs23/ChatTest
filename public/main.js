@@ -1,6 +1,9 @@
-var socket = io.connect("http://localhost:8080", { forceNew: true });
+// Detectar si está en un entorno de producción
+var host = window.location.host;
+var socket = io.connect(`http://${host}`, { forceNew: true });
+
 socket.on("messages", function (data) {
- console.log(data);
+    console.log(data);
 });
 function render(data) {
     var html = data.map(function (elem, index) {
