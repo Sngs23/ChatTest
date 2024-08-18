@@ -1,11 +1,79 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
- <meta charset="UTF-8" />
- <title>My Aplicación con Sockets</title>
- <link rel="stylesheet" href="/public/styles/style.css">
- <script src="/socket.io/socket.io.js"></script>
- <script src="main.js"></script>
+  <meta charset="UTF-8" />
+  <title>My Aplicación con Sockets</title>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="main.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    #chat-container {
+      width: 100%;
+      max-width: 600px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    #messages {
+      flex: 1;
+      padding: 20px;
+      border-bottom: 1px solid #ddd;
+      overflow-y: auto;
+      max-height: 400px;
+    }
+    #messages div {
+      margin-bottom: 15px;
+    }
+    #messages div strong {
+      color: #007bff;
+    }
+    #messages div em {
+      color: #555;
+      background-color: #f1f1f1;
+      padding: 5px 10px;
+      border-radius: 5px;
+      display: inline-block;
+    }
+    #message-form {
+      display: flex;
+      padding: 10px;
+      background-color: #f4f4f4;
+    }
+    #message-form input[type="text"] {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      margin-right: 10px;
+    }
+    #message-form input[type="submit"] {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    #message-form input[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+  </style>
 </head>
 <body>
   <div id="chat-container">
